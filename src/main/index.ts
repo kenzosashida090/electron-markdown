@@ -6,29 +6,49 @@ import icon from '../../resources/icon.png?asset'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1280,
+    height: 560,
+    minHeight: 560,
+    minWidth: 760,
     show: false,
+    titleBarStyle: 'hidden',
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
+    titleBarOverlay: {
+      color: '#2F2F2F',
+      symbolColor: '#ffff',
+      height: 20
+    },
     center: true,
-    title: 'markAnote',
-    frame: false,
+    frame: true,
+    transparent: true,
     vibrancy: 'under-window',
     visualEffectState: 'active',
-    titleBarStyle: 'hidden',
+    backgroundColor: '#3D383C',
+    // backgroundColor: '#2f3241',
     trafficLightPosition: { x: 15, y: 10 },
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: true,
-      contextIsolation: true
+      sandbox: false,
+      contextIsolation: true,
+      nodeIntegration: false
     }
   })
 
+  ipcMain.on('closeApp', () => {
+    mainWindow.close()
+  })
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+    mainWindow.setVibrancy('under-window')
+    const bounds = mainWindow.getBounds()
+    mainWindow.setBounds({
+      ...bounds,
+      width: bounds.width + 1
+    })
+    mainWindow.setBounds(bounds)
   })
-
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }
@@ -45,6 +65,7 @@ function createWindow(): void {
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
+
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   // Set app user model id for windows

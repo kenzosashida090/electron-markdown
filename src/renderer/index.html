@@ -2,14 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta
+    <!-- <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-eval';"
-    />
+    /> -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+    /> -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script defer src="js/appFunction.js"></script>
   </head>
 
   <body>
-    <div id="root"></div>
+    <header class="headerBar"></header>
+    <div id="root" class="title"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

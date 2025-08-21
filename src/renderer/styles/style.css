@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* equivalente a w-full en Tailwind */
+  width: 100%;
+  --webkit-user-select: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* Customize the entire scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the vertical scrollbar */
+  height: 12px; /* Set the height of the horizontal scrollbar */
+}
+
+/* Customize the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+  background: #353135;
+}
+.mdxeditor-code-block-toolbar {
+  display: none !important;
+}
+._codeMirrorToolbar_1e2ox_409 {
+  /* display: none !important; */
+  max-width: 96px;
+  pointer-events: none;
+}
+._iconButton_1e2ox_457 {
+  display: none !important;
+}
+.mdxeditor-popup-container {
+  display: none !important;
+}
+._selectDropdownArrow_1e2ox_374 {
+  display: none !important;
+}
+/* Customize the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #393838;
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
+/* Customize the scrollbar corner (where vertical and horizontal scrollbars meet) */
+/* ::-webkit-scrollbar-corner {
+  background: #ccc;
+} */
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+}
+
+.btn {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: gray;
+}
+button {
+  -webkit-app-region: no-drag;
+}
+
+.headerBar {
+  position: absolute;
+  background-color: '#2f3241';
+
+  height: 29px;
+  color: white;
+  width: 100%;
+}
+header {
+  position: relative;
+}

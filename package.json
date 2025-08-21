@@ -21,9 +21,19 @@
     "build:linux": "electron-vite build && electron-builder --linux"
   },
   "dependencies": {
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.4",
+    "@codemirror/view": "^6.38.1",
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
-    "@tailwindcss/postcss": "^4.1.11"
+    "@mdxeditor/editor": "^3.42.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "@uiw/codemirror-theme-dracula": "^4.25.1",
+    "@uiw/codemirror-theme-github": "^4.25.1",
+    "cm6-theme-basic-dark": "^0.2.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",

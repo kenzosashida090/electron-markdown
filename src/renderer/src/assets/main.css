@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @layer base {
   #root {
@@ -7,9 +8,24 @@
   html,
   body {
     @apply h-full;
+    @apply w-full;
     @apply select-none;
     @apply bg-transparent;
     @apply font-mono antialiased text-white;
     @apply overflow-hidden;
+    background-color: transparent;
+    border-radius: 20px; /* aquí aplicas el radio */
+    -electron-corner-smoothing: 100%;
+    width: 100%;
+  }
+  header {
+    -webkit-app-region: drag;
+  }
+  button {
+    cursor: pointer;
+  }
+  .textoEncima {
+    position: relative;
+    z-index: 20; /* capa por encima del header */
   }
 }
