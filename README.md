@@ -32,3 +32,7 @@ $ npm run build:mac
 # For Linux
 $ npm run build:linux
 ```
+
+# Prototipo del markdown c:
+
+![alt text](image.png)
