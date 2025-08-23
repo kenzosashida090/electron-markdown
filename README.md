@@ -35,4 +35,4 @@ $ npm run build:linux
 
 # Prototipo del markdown c:
 
-![plot](resources/image.png)
+![plot](./src/renderer/src/assets/image.png)
